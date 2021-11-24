@@ -6,7 +6,7 @@ let server = app.listen(3000);
 app.use(express.static('public'));
 
 let io = require("socket.io")(server);
-io.set('transports', ['polling']);
+// io.set('transports', ['polling']);
 io.sockets.on("connection", function(socket){
     console.log("New client: " + socket.id);
     socket.on('mouse', function(data){
